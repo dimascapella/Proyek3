@@ -7,8 +7,8 @@
             <div class="col-md">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-primary">
-                        <li class="breadcrumb-item font-uppercase ">
-                            <a class="font-white text-decoration-none" href="#"><?php echo $path ?></a>
+                        <li class="breadcrumb-item font-uppercase">
+                            <a class="font-white text-decoration-none" href="#"><?php echo $path1 ?></a>
                         </li>
                     </ol>
                 </nav>
@@ -25,8 +25,14 @@
                         </div>
                         <div class="col-md-8">
                             <div class="context mt-3">
-                                <h5 class="font-weight-bold d-block">Total Stok Hari ini :</h5>
-                                <h3 class="d-block">60</h3>
+                                <h5 class="font-weight-bold d-block">Sisa Stok Hari ini :</h5>
+                                <h3 class="d-block">
+                                    <?php if ($currentStock > 0) { ?>
+                                        <?= $currentStock; ?>
+                                    <?php } else { ?>
+                                        0
+                                    <?php } ?>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -42,8 +48,13 @@
                         </div>
                         <div class="col-md-8">
                             <div class="context mt-3">
-                                <h5 class="font-weight-bold d-block">Total Barang Terjual :</h5>
-                                <h3 class="d-block">40</h3>
+                                <h5 class="font-weight-bold d-block">Total Product Terjual :</h5>
+                                <h3 class="d-block">
+                                    <?php if ($soldStock > 0) { ?>
+                                        <?= $soldStock; ?>
+                                    <?php } else { ?>
+                                        0
+                                    <?php } ?></h3>
                             </div>
                         </div>
                     </div>
@@ -59,8 +70,14 @@
                         </div>
                         <div class="col-md-8">
                             <div class="context mt-3">
-                                <h5 class="font-weight-bold d-block">Pendapatan Hari ini :</h5>
-                                <h3 class="d-block">Rp. 12456789</h3>
+                                <h5 class="font-weight-bold d-block">Total Pendapatan :</h5>
+                                <h3 class="d-block convert-money">
+                                    <?php if ($income > 0) { ?>
+                                        <?= $income; ?>
+                                    <?php } else { ?>
+                                        0
+                                    <?php } ?></h3>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -123,6 +140,16 @@
                 }]
             }
         }
+    });
+</script>
+<script type="text/javascript">
+    $('.convert-money').each(function() {
+        var monetary_value = $(this).text();
+        var i = new Intl.NumberFormat('id', {
+            style: 'currency',
+            currency: 'IDR'
+        }).format(monetary_value);
+        $(this).text(i);
     });
 </script>
 <?= $this->endSection(); ?>

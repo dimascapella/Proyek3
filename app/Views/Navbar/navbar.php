@@ -4,7 +4,7 @@
 <nav class="navbar">
     <ul class="navbar-nav">
         <li class="logo">
-            <a href="#" class="nav-link">
+            <a href="<?php base_url() ?>/menu/" class="nav-link">
                 <span class="link-text logo-text">Menu</span>
                 <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x">
                     <g class="fa-group">
@@ -16,35 +16,35 @@
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-home navbar-icons"></i>
-                <span class="link-text">Home</span>
+            <a href="<?php base_url() ?>/menu/" class="nav-link">
+                <i class="fas fa-chart-line navbar-icons"></i>
+                <span class="link-text">Halaman Utama</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-home navbar-icons"></i>
-                <span class="link-text">Home</span>
+            <a href="<?php base_url() ?>/menu/list_product" class="nav-link">
+                <i class="fas fa-clipboard-list navbar-icons"></i>
+                <span class="pl-2 link-text">Daftar Makanan</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-home navbar-icons"></i>
-                <span class="link-text">Home</span>
+            <a href="<?php base_url() ?>/menu/add_product" class="nav-link">
+                <i class="fas fa-plus-square navbar-icons"></i>
+                <span class="pl-1 link-text">Tambah Makanan</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-home navbar-icons"></i>
-                <span class="link-text">Home</span>
+            <a href="<?php base_url() ?>/menu/predict" class="nav-link">
+                <i class="fas fa-search-dollar navbar-icons"></i>
+                <span class="pl-05 link-text">Prediksi</span>
             </a>
         </li>
 
         <li class="nav-item" id="themeButton">
-            <a href="#" class="nav-link">
+            <a href="<?php base_url() ?>/LoginController/logout_action" class="nav-link">
                 <i class="fas fa-sign-out-alt navbar-icons"></i>
                 <span class="link-text">Log Out</span>
             </a>

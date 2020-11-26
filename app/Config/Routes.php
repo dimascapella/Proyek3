@@ -32,7 +32,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'LoginController::index');
-$routes->get('/pages', 'Pages::index');
+$routes->get('/menu', 'Menu::index');
+$routes->get('/menu/detail/(:any)', 'Menu::edit_page/$1');
+$routes->get('/menu/sold/(:any)', 'Menu::sold_page/$1');
+$routes->delete('/menu/(:num)', 'ProdukController::delete_barang/$1');
 
 /**
  * --------------------------------------------------------------------
